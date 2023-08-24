@@ -18,6 +18,17 @@ function updateTime() {
 
   ParisDate.innerHTML = ParisMoment.format("MMMM Do YYYY");
   ParisTime.innerHTML = ParisMoment.format("h:mm:ss [<small>]A[</small>]");
+
+  //Honolulu
+  let honoluluElement = document.querySelector("#honolulu");
+  let honoluluDate = honoluluElement.querySelector(".date");
+  let honoluluTime = honoluluElement.querySelector(".time");
+  let honoluluMoment = moment().tz("Pacific/Honolulu");
+
+  honoluluDate.innerHTML = honoluluMoment.format("MMMM Do YYYY");
+  honoluluTime.innerHTML = honoluluMoment.format(
+    "h:mm:ss [<small>]A[</small>]"
+  );
 }
 
 updateTime();
